@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Chart Dashboard</title>
+  <title>Food Care</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
@@ -20,6 +20,22 @@
     .flex-grow {
       flex: 1;
     }
+
+    .meal-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .meal-card img {
+      width: 120px;
+      height: 80px;
+      border-radius: 0.5rem;
+    }
   </style>
 </head>
 <body class="bg-gray-100">
@@ -30,17 +46,17 @@
         <i class="fas fa-user-circle text-3xl text-orange-500"></i>
       </div>
       <div class="flex flex-col space-y-8">
-        <a href="dashboard.html">
+        <a href="home.html">
           <i id="home-icon" class="fas fa-home text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
         </a>
         <a href="chart.html">
-          <i id="chart-icon" class="fas fa-chart-line text-xl text-orange-500 cursor-pointer transition"></i>
+          <i id="chart-icon" class="fas fa-chart-line text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
         </a>
         <a href="dumbbell.html">
           <i id="dumbbell-icon" class="fas fa-dumbbell text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
         </a>
         <a href="utensils.html">
-          <i id="utensils-icon" class="fas fa-utensils text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+          <i id="utensils-icon" class="fas fa-utensils text-xl text-orange-500 cursor-pointer transition"></i>
         </a>
         <a href="settings.html">
           <i id="settings-icon" class="fas fa-cog text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
@@ -53,36 +69,88 @@
 
     <!-- Main Content -->
     <div class="flex-1 p-6">
-      <!-- Chart Tab -->
-      <div id="chart-tab" class="tab-content">
+      <!-- Food Care Tab -->
+      <div id="utensils-tab" class="tab-content">
         <div class="flex justify-between items-center mb-6">
-          <h1 class="text-2xl font-bold">Fitness Tracking Charts</h1>
+          <h1 class="text-2xl font-bold">Food Care</h1>
         </div>
 
-        <!-- Charts Section -->
+        <!-- Featured Meal Section -->
         <div class="grid grid-cols-2 gap-6">
-          <!-- Steps Chart -->
+          <!-- Breakfast -->
           <div class="bg-white p-4 rounded-lg shadow">
-            <h2 class="font-semibold mb-4">Steps Progress</h2>
-            <canvas id="stepsChart"></canvas>
-          </div>
-          
-          <!-- Calories Chart -->
-          <div class="bg-white p-4 rounded-lg shadow">
-            <h2 class="font-semibold mb-4">Calories Burned</h2>
-            <canvas id="caloriesChart"></canvas>
+            <h2 class="font-semibold mb-4">Breakfast</h2>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Avocado Salad</p>
+                <p class="text-gray-500 text-sm">8% carbs • 16% protein • 6% fat</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Avocado+Salad" alt="Avocado Salad">
+            </div>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Blueberries</p>
+                <p class="text-gray-500 text-sm">10% carbs • 15% protein • 5% fat</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Blueberries" alt="Blueberries">
+            </div>
           </div>
 
-          <!-- Water Intake Chart -->
+          <!-- Lunch -->
           <div class="bg-white p-4 rounded-lg shadow">
-            <h2 class="font-semibold mb-4">Water Intake</h2>
-            <canvas id="waterChart"></canvas>
+            <h2 class="font-semibold mb-4">Lunch</h2>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Grilled Chicken Salad</p>
+                <p class="text-gray-500 text-sm">20% protein • 5% carbs • 10% fat</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Grilled+Chicken" alt="Grilled Chicken Salad">
+            </div>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Quinoa Bowl</p>
+                <p class="text-gray-500 text-sm">25% carbs • 15% protein • 7% fat</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Quinoa+Bowl" alt="Quinoa Bowl">
+            </div>
           </div>
 
-          <!-- Heart Rate Chart -->
+          <!-- Dinner -->
           <div class="bg-white p-4 rounded-lg shadow">
-            <h2 class="font-semibold mb-4">Heart Rate</h2>
-            <canvas id="heartRateChart"></canvas>
+            <h2 class="font-semibold mb-4">Dinner</h2>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Salmon with Veggies</p>
+                <p class="text-gray-500 text-sm">30% protein • 10% fat • 5% carbs</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Salmon+Veggies" alt="Salmon with Veggies">
+            </div>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Stir-fry Vegetables</p>
+                <p class="text-gray-500 text-sm">10% carbs • 5% protein • 2% fat</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Stir-fry+Veggies" alt="Stir-fry Vegetables">
+            </div>
+          </div>
+
+          <!-- Snacks -->
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="font-semibold mb-4">Snacks</h2>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Greek Yogurt</p>
+                <p class="text-gray-500 text-sm">15% protein • 5% fat • 8% carbs</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Greek+Yogurt" alt="Greek Yogurt">
+            </div>
+            <div class="meal-card">
+              <div>
+                <p class="font-semibold">Mixed Nuts</p>
+                <p class="text-gray-500 text-sm">20% fat • 10% protein • 5% carbs</p>
+              </div>
+              <img src="https://via.placeholder.com/120x80.png?text=Mixed+Nuts" alt="Mixed Nuts">
+            </div>
           </div>
         </div>
       </div>
@@ -116,7 +184,8 @@
         <div class="flex justify-between items-center mb-4">
           <div class="flex items-center space-x-2">
             <i class="fas fa-running text-xl text-blue-500"></i>
-            <p class="text-gray-500">Running</p>
+            <p class="text-gray-500
+            ">Running</p>
           </div>
           <p class="font-semibold">70km/80km</p>
         </div>
@@ -166,100 +235,5 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    // Steps Chart
-    const stepsCtx = document.getElementById('stepsChart').getContext('2d');
-    const stepsChart = new Chart(stepsCtx, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Steps',
-          data: [2000, 2500, 3000, 3500, 2500, 4000, 3200],
-          backgroundColor: 'rgba(0, 128, 128, 0.2)',
-          borderColor: 'rgba(0, 128, 128, 0.2)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    // Calories Chart
-    const caloriesCtx = document.getElementById('caloriesChart').getContext('2d');
-    const caloriesChart = new Chart(caloriesCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Calories Burned',
-          data: [500, 600, 800, 700, 900, 650, 700],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    // Water Intake Chart
-    const waterCtx = document.getElementById('waterChart').getContext('2d');
-    const waterChart = new Chart(waterCtx, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Liters of Water',
-          data: [1.0, 1.2, 1.3, 1.1, 1.25, 1.4, 1.35],
-          backgroundColor: 'rgba(255, 165, 0, 0.2)',
-          borderColor: 'rgba(255, 165, 0, 1)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    // Heart Rate Chart
-    const heartRateCtx = document.getElementById('heartRateChart').getContext('2d');
-    const heartRateChart = new Chart(heartRateCtx, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Heart Rate (BPM)',
-          data: [110, 112, 115, 118, 120, 110, 114],
-          backgroundColor: 'rgba(128, 0, 128, 0.2)',
-          borderColor: 'rgba(128, 0, 128, 1)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script>
 </body>
 </html>

@@ -31,10 +31,10 @@
       <i class="fas fa-user-circle text-3xl text-orange-500"></i>
   </div>
   <div class="flex flex-col space-y-8">
-      <a href="home.html">
+      <a href="dashboard.html">
           <i id="home-icon" class="fas fa-home text-xl text-orange-500 cursor-pointer transition"></i>
       </a>
-      <a href="{{ url_for('chart') }}">
+      <a href="chart.html">
           <i id="chart-icon" class="fas fa-chart-line text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
       </a>
       <a href="dumbbell.html">
@@ -47,9 +47,9 @@
       <a href="settings.html">
         <i id="settings-icon" class="fas fa-cog text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
       </a>
-      <a href="{{ url_for('logout') }}">
+      <a href="logout.html"></a>
         <i id="logout-icon" class="fas fa-sign-out-alt text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
-    </a>    
+      </a>
 
   </div>
 </div>
@@ -57,8 +57,8 @@
 
     <!-- Main Content -->
     <div class="flex-1 p-6">
-      <!-- Home Tab -->
-      <div id="home-tab" class="tab-content">
+      <!-- dashboard Tab -->
+      <div id="dashboard-tab" class="tab-content">
         <div class="flex justify-between items-center mb-6">
           <div>
             <p class="text-gray-500">Good Morning</p>
@@ -272,8 +272,7 @@
         
       </div>
       
-      <div id="chart-tab" class="hidd      <!-- Chart Tab (Hide by default) -->
-en tab-content">
+      <div id="chart-tab" class="hidden tab-content">
         <h1>Chart Content</h1>
       </div>
 
@@ -381,7 +380,7 @@ en tab-content">
   <script>
     // Navigation functionality
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden')); // Hide all tabs
-    document.getElementById('home-tab').classList.remove('hidden'); // Show the home tab by default
+    document.getElementById('dashboard-tab').classList.remove('hidden'); // Show the dashboard tab by default
 
     function showTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden')); // Hide all tabs
@@ -389,7 +388,7 @@ en tab-content">
     }
 
     // Event listeners for icons
-    document.getElementById('home-icon').addEventListener('click', () => showTab('home-tab'));
+    document.getElementById('dashboard-icon').addEventListener('click', () => showTab('dashboard-tab'));
     document.getElementById('chart-icon').addEventListener('click', () => showTab('chart-tab'));
     document.getElementById('dumbbell-icon').addEventListener('click', () => showTab('dumbbell-tab'));
     document.getElementById('utensils-icon').addEventListener('click', () => showTab('utensils-tab'));
