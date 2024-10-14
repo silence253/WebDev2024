@@ -1,0 +1,162 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Chart Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="flex">
+    <!-- Sidebar -->
+    <div class="w-20 bg-white h-screen flex flex-col items-center py-4 shadow-lg">
+        <div class="mb-8">
+            <i class="fas fa-user-circle text-3xl text-orange-500"></i>
+        </div>
+        <div class="flex flex-col space-y-8">
+            <a href="home.html">
+                <i id="home-icon" class="fas fa-home text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+            </a>
+            <a href="chart.html">
+                <i id="chart-icon" class="fas fa-chart-line text-xl text-gray-400 text-orange-500 cursor-pointer transition"></i>
+            </a>
+            <a href="dumbbell.html">
+                <i id="dumbbell-icon" class="fas fa-dumbbell text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+            </a>
+            <a href="utensils.html">
+                <i id="utensils-icon" class="fas fa-utensils text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+            </a>
+            <a href="settings.html">
+                <i id="settings-icon" class="fas fa-cog text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+            </a>
+            <a href="logout.html">
+                <i id="logout-icon" class="fas fa-sign-out-alt text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Main Content -->
+<div class="flex-1 p-6">
+    <!-- Chart Tab -->
+    <div id="chart-tab" class="tab-content">
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <p class="text-gray-500">Charts Overview</p>
+          <h1 class="text-2xl font-bold">Track Your Progress <span>📊</span></h1>
+        </div>
+      </div>
+      <!-- Chart Content Section -->
+      <div class="grid grid-cols-3 gap-6 mb-6">
+        <!-- Steps Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fas fa-shoe-prints text-2xl text-teal-500"></i>
+            <p class="text-teal-500 font-semibold">Steps</p>
+          </div>
+          <canvas id="stepsChart"></canvas>
+        </div>
+        <!-- Water Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fas fa-tint text-2xl text-orange-500"></i>
+            <p class="text-orange-500 font-semibold">Water Intake</p>
+          </div>
+          <canvas id="waterChart"></canvas>
+        </div>
+        <!-- Calories Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fas fa-fire text-2xl text-pink-500"></i>
+            <p class="text-pink-500 font-semibold">Calories Burned</p>
+          </div>
+          <canvas id="caloriesChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <!-- Heart Rate Chart -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div class="flex justify-between items-center mb-4">
+            <p class="font-semibold">Heart Rate</p>
+            <div class="flex items-center space-x-2">
+              <p class="text-gray-500">Daily</p>
+              <i class="fas fa-chevron-down text-gray-500"></i>
+            </div>
+          </div>
+          <canvas id="heartRateChart"></canvas>
+        </div>
+        
+        <!-- Progress Over Time -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <div class="flex justify-between items-center mb-4">
+            <p class="font-semibold">Progress Over Time</p>
+            <div class="flex items-center space-x-2">
+              <p class="text-gray-500">Weekly</p>
+              <i class="fas fa-chevron-down text-gray-500"></i>
+            </div>
+          </div>
+          <canvas id="progressChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Detailed Report Section -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <p class="font-semibold mb-4">Detailed Report</p>
+          <p class="text-gray-500">View your detailed performance report by selecting a specific time range and activity.</p>
+          <a class="text-blue-500" href="#">Generate Report</a>
+        </div>
+        
+        <!-- Future Goal Analysis -->
+        <div class="bg-white p-4 rounded-lg shadow">
+          <p class="font-semibold mb-4">Future Goal Analysis</p>
+          <p class="text-gray-500">See predictions and insights based on your recent performance and set new goals.</p>
+          <a class="text-blue-500" href="#">Analyze Goals</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Chart initialization 
+    const ctxSteps = document.getElementById('stepsChart').getContext('2d');
+    const stepsChart = new Chart(ctxSteps, {
+      type: 'line',
+      data: { /* chart data */ },
+      options: { /* chart options */ }
+    });
+  
+    const ctxWater = document.getElementById('waterChart').getContext('2d');
+    const waterChart = new Chart(ctxWater, {
+      type: 'line',
+      data: { /* chart data */ },
+      options: { /* chart options */ }
+    });
+  
+    const ctxCalories = document.getElementById('caloriesChart').getContext('2d');
+    const caloriesChart = new Chart(ctxCalories, {
+      type: 'bar',
+      data: { /* chart data */ },
+      options: { /* chart options */ }
+    });
+  
+    const ctxHeartRate = document.getElementById('heartRateChart').getContext('2d');
+    const heartRateChart = new Chart(ctxHeartRate, {
+      type: 'line',
+      data: { /* chart data */ },
+      options: { /* chart options */ }
+    });
+  
+    const ctxProgress = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctxProgress, {
+      type: 'line',
+      data: { /* chart data */ },
+      options: { /* chart options */ }
+    });
+  </script>
+  
+
+ 
+    
+</body>
+</html>
