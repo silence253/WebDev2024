@@ -28,27 +28,27 @@
     <!-- Sidebar -->
 <div class="w-20 bg-white h-screen flex flex-col items-center py-4">
   <div class="mb-8">
-      <i class="fas fa-user-circle text-3xl text-orange-500"></i>
+      <i class="fas fa-user-circle text-3xl text-green-500"></i>
   </div>
   <div class="flex flex-col space-y-8">
-      <a href="dashboard.html">
-          <i id="home-icon" class="fas fa-home text-xl text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('dashboard') }}">
+          <i id="home-icon" class="fas fa-home text-xl text-green-500 cursor-pointer transition"></i>
       </a>
-      <a href="chart.html">
-          <i id="chart-icon" class="fas fa-chart-line text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('chart') }}">
+          <i id="chart-icon" class="fas fa-chart-line text-xl text-gray-400 hover:text-green-500 cursor-pointer transition"></i>
       </a>
-      <a href="dumbbell.html">
-        <i id="dumbbell-icon" class="fas fa-dumbbell text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('dumbbell') }}">
+        <i id="dumbbell-icon" class="fas fa-dumbbell text-xl text-gray-400 hover:text-green-500 cursor-pointer transition"></i>
       </a>
 
-      <a href="utensils.html">
-        <i id="utensils-icon" class="fas fa-utensils text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('utensils') }}">
+        <i id="utensils-icon" class="fas fa-utensils text-xl text-gray-400 hover:text-green-500 cursor-pointer transition"></i>
       </a>
-      <a href="settings.html">
-        <i id="settings-icon" class="fas fa-cog text-xl text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('settings') }}">
+        <i id="settings-icon" class="fas fa-cog text-xl text-gray-400 hover:text-green-500 cursor-pointer transition"></i>
       </a>
-      <a href="logout.html"></a>
-        <i id="logout-icon" class="fas fa-sign-out-alt text-gray-400 hover:text-orange-500 cursor-pointer transition"></i>
+      <a href="{{ url_for('logout') }}">
+        <i id="logout-icon" class="fas fa-sign-out-alt text-gray-400 hover:text-green-500 cursor-pointer transition"></i>
       </a>
 
   </div>
@@ -78,8 +78,8 @@
           <!-- Water Card -->
           <div class="bg-white p-4 rounded-lg shadow">
             <div class="flex items-center space-x-2 mb-4">
-              <i class="fas fa-tint text-2xl text-orange-500"></i>
-              <p class="text-orange-500 font-semibold">Water</p>
+              <i class="fas fa-tint text-2xl text-blue-500"></i>
+              <p class="text-blue-500 font-semibold">Water</p>
             </div>
             <h2 class="text-3xl font-bold">1.25 <span class="text-lg">Liters</span></h2>
           </div>
@@ -129,8 +129,8 @@
               </div>
               <div class="flex flex-col items-center">
                 <p class="text-gray-500">Fri</p>
-                <div class="w-6 h-32 bg-orange-500 rounded"></div>
-                <p class="text-orange-500 font-semibold">50%</p>
+                <div class="w-6 h-32 bg-green-500 rounded"></div>
+                <p class="text-green-500 font-semibold">50%</p>
               </div>
               <div class="flex flex-col items-center">
                 <p class="text-gray-500">Sat</p>

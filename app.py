@@ -144,10 +144,28 @@ def dashboard():
     else:
         flash('You need to log in first!')
         return redirect(url_for('login'))
-
+# Chart page route
 @app.route('/chart')
 def chart():
     return render_template('chart.html')
+
+# Train Guide (Dumbbell) page route
+@app.route('/dumbbell')
+def dumbbell():
+    return render_template('dumbbell.html')
+
+# Food Care (Utensils) page route
+@app.route('/utensils')
+def utensils():
+    return render_template('utensils.html')
+
+# Settings page route
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+  
+
+
 @app.route('/logout')
 def logout():
     session.pop('user', None)  # Xóa thông tin người dùng khỏi session
