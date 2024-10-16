@@ -62,7 +62,7 @@
         <div class="flex justify-between items-center mb-6">
           <div>
             <p class="text-gray-500">Good Morning</p>
-            <h1 class="text-2xl font-bold">Welcome Back <span>🎉</span></h1>
+            <h1 class="text-2xl font-bold">Welcome Back {{ username }} <span>🎉</span></h1>
           </div>
         </div>
         <div class="grid grid-cols-4 gap-6 mb-6">
@@ -302,8 +302,7 @@
     <div class="flex items-center space-x-4 mb-6">
       <img alt="User profile" class="w-12 h-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/dWCHnk3QZUZnNNtrpAwLBu8kawHV7SXlYUXK1QirfMpAOVxJA.jpg" width="50"/>
       <div>
-        <p class="font-semibold">Thomas Fletcher</p>
-        <p class="text-gray-500">Sydney, Australia</p>
+        <p class="font-semibold">{{ username }} </p>
       </div>
     </div>
     <div class="mb-6">
